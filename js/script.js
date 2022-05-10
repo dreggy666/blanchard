@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       rows: 1,
       fill: "row"
     },
+    spaceBetween: 15,
     pagination: {
       el: ".gallary-swiper-nav__pagination",
       type: "fraction"
@@ -207,6 +208,7 @@ const modal = new Modal({
       rows: 1,
       fill: "row"
     },
+    spaceBetween: 15,
     pagination: {
       el: '.event-nav-pagination',
       type: 'bullets',
@@ -279,12 +281,11 @@ tippy('.js-tooltip-btn', {
 document.addEventListener("DOMContentLoaded", () => {
   let projectSlider = new Swiper(".projects__swiper", {
     speed: 400,
-    slidesPerView: 1,
     grid: {
       rows: 1,
       fill: "row"
     },
-    spaceBetween: 50,
+    spaceBetween: 15,
     navigation: {
       nextEl: ".projects-nav-btn--next",
       prevEl: ".projects-nav-btn--prev",
