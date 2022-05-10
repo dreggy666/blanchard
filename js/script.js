@@ -112,15 +112,12 @@ const choices = new Choices(element, {
 document.addEventListener("DOMContentLoaded", () => {
   let gallerySlider = new Swiper(".slides-container", {
     speed: 400,
-    slidesPerView: 1,
-    direction: 'horizontal',
     grid: {
       rows: 1,
       fill: "row"
     },
-    spaceBetween: 20,
     pagination: {
-      el: ".gallary .gallary-swiper-nav__pagination",
+      el: ".gallary-swiper-nav__pagination",
       type: "fraction"
     },
     navigation: {
