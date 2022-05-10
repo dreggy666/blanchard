@@ -1,21 +1,21 @@
     // Header burger
 
-document.querySelector(".header-top-burger__btn--open").addEventListener("click", function() {
+document.querySelector(".header-top__burger-open").addEventListener("click", function() {
   document.querySelector(".header-top-nav").classList.add("header-top-nav--active");
 })
-document.querySelector(".header-top-burger__btn--close").addEventListener("click", function() {
+document.querySelector(".header-top__burger-close").addEventListener("click", function() {
   document.querySelector(".header-top-nav").classList.remove("header-top-nav--active");
 })
 
     // Header search
 
-document.querySelector(".header-top-search__btn--open").addEventListener("click", function() {
+document.querySelector(".header-top__search-open").addEventListener("click", function() {
   document.querySelector(".header-top-search__form").classList.add("header-top-search__form--active");
   this.classList.add("active");
 })
-document.querySelector(".header-top-search__btn--close").addEventListener("click", function() {
+document.querySelector(".header-top__search-close").addEventListener("click", function() {
   document.querySelector(".header-top-search__form").classList.remove("header-top-search__form--active");
-  document.querySelector(".header-top-search__btn--open").classList.remove("active");
+  document.querySelector(".header-top__search-open").classList.remove("active");
 })
 document.addEventListener("click", function(e) {
   let target = e.target;
@@ -23,7 +23,7 @@ document.addEventListener("click", function(e) {
   if (!target.closest(".header-top-search")) {
   form.classList.remove("header-top-search__form--active");
     form.querySelector("input").value = "";
-    document.querySelector(".header-top-search__btn--open").classList.remove("active")
+    document.querySelector(".header-top__search-open").classList.remove("active")
   }
 })
 
@@ -36,14 +36,14 @@ document.addEventListener("click", function(e) {
     document.querySelectorAll(".header-bottom-nav__btn").forEach(item => {
     item.addEventListener("click", function() {
       let btn = this;
-      let dropdown = this.parentElement.querySelector(".header-bottom-nav--dropdown");
+      let dropdown = this.parentElement.querySelector(".header-bottom-dropdown");
       document.querySelectorAll(".header-bottom-nav__btn").forEach(el => {
         if (el != btn) {
           el.classList.remove("active-nav__btn");
           el.setAttribute("aria-expanded", "false");
         }
       });
-      document.querySelectorAll(".header-bottom-nav--dropdown").forEach(el => {
+      document.querySelectorAll(".header-bottom-dropdown").forEach(el => {
         if (el != dropdown) {
           el.classList.remove("active-dropdown__list");
         }
@@ -60,7 +60,7 @@ document.addEventListener("click", function(e) {
   document.addEventListener("click", function(e) {
     let target = e.target;
     if (!target.closest(".header-bottom-nav__list")) {
-      document.querySelectorAll(".header-bottom-nav--dropdown").forEach(el => {
+      document.querySelectorAll(".header-bottom-dropdown").forEach(el => {
         el.classList.remove("active-dropdown__list");
       })
       document.querySelectorAll(".header-bottom-nav__btn").forEach(el => {
@@ -70,9 +70,10 @@ document.addEventListener("click", function(e) {
     }
   })
   })
+
     // Header dropdown-menu custom scroll
 
-document.querySelectorAll(".header-bottom-nav--dropdown__list").forEach(item => {
+document.querySelectorAll(".header-bottom-dropdown__list").forEach(item => {
   new SimpleBar(item, {
 //   /* чтобы изначально ползунок был виден */
   autoHide: false,
@@ -80,6 +81,7 @@ document.querySelectorAll(".header-bottom-nav--dropdown__list").forEach(item => 
   scrollbarMaxSize: 28,
 });
 })
+
     // Hero slider
 
 const container = document.querySelector(".container")
@@ -99,6 +101,7 @@ const swiper = new Swiper('.hero__swiper', {
 
 const element = document.querySelector('select');
 const choices = new Choices(element, {
+  allowHTML: true,
   searchEnabled: false,
   shouldSort: false,
   itemSelectText: '',
@@ -117,14 +120,14 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     spaceBetween: 20,
     pagination: {
-      el: ".gallary .slider-nav__pagination",
+      el: ".gallary .gallary-swiper-nav__pagination",
       type: "fraction"
     },
     navigation: {
-      nextEl: ".gallary-nav__btn--next",
-      prevEl: ".gallary-nav__btn--prev",
+      nextEl: ".gallary-swiper-nav__btn--next",
+      prevEl: ".gallary-swiper-nav__btn--prev",
       slideClass: ".gallary-slide",
-      disabledClass: 'gallary-nav__btn--disabled',
+      disabledClass: 'gallary-swiper-nav__btn--disabled',
     },
     breakpoints: {
       768: {
@@ -208,7 +211,7 @@ const modal = new Modal({
       fill: "row"
     },
     pagination: {
-      el: '.event__pagination',
+      el: '.event-nav-pagination',
       type: 'bullets',
       clickable: true,
     },
@@ -230,9 +233,9 @@ const modal = new Modal({
         }
     },
     navigation: {
-      nextEl: '.events-nav__btn--next',
-      prevEl: '.events-nav__btn--prev',
-      disabledClass: 'events-nav__btn--disable',
+      nextEl: '.events-nav-btn--next',
+      prevEl: '.events-nav-btn--prev',
+      disabledClass: 'events-nav-btn--disable',
     },
     a11y: false,
     keyboard: {
@@ -286,10 +289,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     spaceBetween: 50,
     navigation: {
-      nextEl: ".projects-nav__btn--next",
-      prevEl: ".projects-nav__btn--prev",
-      disabledClass: 'projects-nav__btn--disable',
-      slideClass: ".projects-card__link",
+      nextEl: ".projects-nav-btn--next",
+      prevEl: ".projects-nav-btn--prev",
+      disabledClass: 'projects-nav-btn--disable',
+      slideClass: ".projects-card-link",
     },
     breakpoints: {
       768: {
@@ -354,7 +357,7 @@ const validation = new JustValidate('.contacts-top__form',
   },
 );
 validation
-  .addField('.js-input--name', [
+  .addField('.js-input-name', [
     {
       rule: 'required',
       value: true,
@@ -376,7 +379,7 @@ validation
       errorMessage: 'Недопустимый формат',
     },
   ])
-  .addField('.js-input--tel', [
+  .addField('.js-input-tel', [
     {
       rule: 'required',
       value: true,
@@ -488,7 +491,7 @@ const MOBILE_WIDTH = 580;
 	      behavior: 'smooth'
 	  });
 	}
-	document.querySelectorAll('.js-scroll-link--mobile').forEach(link => {
+	document.querySelectorAll('.js-scroll-link-mobile').forEach(link => {
 	  link.addEventListener('click', function(e) {
 	      e.preventDefault();
 	      scrollToContent(this, true);
