@@ -478,6 +478,7 @@ input[type="search"]::-webkit-search-results-decoration {
   max-width: 218px;
   padding-left: 0;
   border-bottom: solid 1px var(--color-white-85a);
+  border-radius: 0;
   transition: border-color 0.3s ease-in-out;
 }
 .header-bottom-search__input::placeholder {
@@ -2538,7 +2539,8 @@ input[type="search"]::-webkit-search-results-decoration {
   .gallary-swiper-nav {
     order: 2;
   }
-  .swiper-container {
+  .slides-container {
+    width: 100%;
     order: 1;
     margin-bottom: 20px;
   }
@@ -2742,7 +2744,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .footer__container {
     flex-direction: column;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 19px;
   }
   .footer-social {
     margin-left: 0;
