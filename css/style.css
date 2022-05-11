@@ -342,6 +342,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .header-top__search-close {
   margin: 5px 8px 0 23px;
+  line-height: 0;
 }
 .header-top-search__input:focus-visible,
 .header-bottom-search__input:focus-visible {
@@ -648,9 +649,6 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 92px;
-}
-.hero__descr br {
-  display: none;
 }
 .hero__btn {
   display: inline-block;
@@ -2484,13 +2482,12 @@ input[type="search"]::-webkit-search-results-decoration {
     line-height: 38px;
   }
   .hero__descr {
+    display: inline-block;
+    width: 95%;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     margin-bottom: 42px;
-  }
-  .hero__descr br {
-    display: inline;
   }
   .hero__btn {
     font-size: 12px;
