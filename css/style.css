@@ -334,6 +334,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .header-top__search-submit {
   margin-right: 10px;
+  line-height: 0;
 }
 .header-top-search__input {
   border-bottom: solid 1px var(--color-white-85a);
