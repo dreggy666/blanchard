@@ -2742,7 +2742,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .footer__container {
     flex-direction: column;
     padding-top: 20px;
-    padding-bottom: 18px;
+    padding-bottom: 19px;
   }
   .footer-social {
     margin-left: 0;
